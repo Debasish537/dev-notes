@@ -8,11 +8,17 @@ function Home() {
 
   //Calling API For Getting all Notes
   async function getAllNotes(){ //It's not a part of frontend that's why async
-    let res = await axios.get(`https://dev-notes-uz02.onrender.com/api/note`);
-    // console.log(res);
-    // console.log(res.data);
-    console.log(res.data.notes);
-    setNotes(res.data.notes);
+    try{
+
+      let res = await axios.get(`https://dev-notes-uz02.onrender.com/api/note`);
+      // console.log(res);
+      // console.log(res.data);
+      console.log(res.data.notes);
+      setNotes(res.data.notes);
+    }
+    catch(err){
+      console.error('API Error',err);
+    }
   }
 
   useEffect(function (){
