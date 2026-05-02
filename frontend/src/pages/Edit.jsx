@@ -28,7 +28,7 @@ function Edit() {
 
     async function handleData(data) {//the data coming from handleSubmit() which caputure data from register() 
         console.log(data);
-        let res = await axios.put(`http://localhost:3000/api/note/${location.state._id}`, data); //sending form data to database
+        let res = await axios.put(`https://dev-notes-uz02.onrender.com/api/note/${location.state._id}`, data); //sending form data to database
         console.log(res);
         navigate('/');
     }

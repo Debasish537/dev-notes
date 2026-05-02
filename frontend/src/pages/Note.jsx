@@ -14,13 +14,13 @@ function Note() {
     let [note, setNote] = useState(null);
 
     async function getNote() {
-        let res = await axios.get(`http://localhost:3000/api/note/${params.id}`);//send id to api for hit the router then controler gives back the data as response
+        let res = await axios.get(`https://dev-notes-uz02.onrender.com/api/note/${params.id}`);//send id to api for hit the router then controler gives back the data as response
         console.log(res);
         setNote(res.data.note);
     }
 
     async function deleteNote() {
-        let res = await axios.delete(`http://localhost:3000/api/note/${params.id}`);//send id to api for hit the router then controler gives back the data as response
+        let res = await axios.delete(`https://dev-notes-uz02.onrender.com/api/note/${params.id}`);//send id to api for hit the router then controler gives back the data as response
         console.log(res);
         // setNote(res.data.note);
         navigate('/');
